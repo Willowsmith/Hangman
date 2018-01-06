@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/processing.min.js"></script>
 <meta charset="ISO-8859-1">
 <style>
-body {background-color: black;}
-h1 {color: white;}
+body {
+	background-color: white;
+}
+
+h1 {
+	color: black;
+}
 </style>
 <title>Hangman</title>
 </head>
 <body>
-<h1>
-Myssa is Awesome!!</h1>
-<canvas data-processing-sources="pde/game.pde"></canvas>
+	<h1>Welcome to Hangman!</h1>
+	<canvas data-processing-sources="pde/game.pde"></canvas>
+	<ol>
+		<li>You select letters by clicking on them, do not use your keyboard!!!!</li>
+		<li>You win when you choose all of the correct letters for the word before Fred is hanged!</li>
+		<li>You lose if you choose the wrong letters so many times that all of Fred shows.</li>
+	</ol>
 </body>
 </html>
