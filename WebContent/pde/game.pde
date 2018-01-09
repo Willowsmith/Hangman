@@ -2,6 +2,7 @@ size(400, 400);
 
 background(0, 0, 0);
 
+
 function hangedcolor () {
 	stroke(255, 255, 255);
 	strokeWeight(3);
@@ -145,16 +146,19 @@ function drawGallows () {
 };
 
 
-var Word = function(words) {
-	this.word = selectWord(words);
+var Word = function(wordList) {
+	this.word = selectWord(wordList);
 };
 
 /* Here I created a function to choose a word from the words array randomly by creating a 
 variable which stores the number randomly chosen, but constrained by the length of the words
 list and rounded down. It then will return the word at that location in the list.*/
-function selectWord (words) {
-	var index = floor(random(words.length));
-	return words[index];
+
+function selectWord (wordList) {
+	var index = floor(random(wordList.length));
+	var outputWord = wordList[index];
+	wordList.splice(index,1);
+	return outputWord;
 };
 
 /*This function is made to calculate the length of a string and return the numerical value
@@ -199,7 +203,10 @@ var words = [
 	"phylum",
 	"buzzing"	
 ];
-var gameWord = new Word(words);
+
+var possibleWords = words.slice(0);
+
+var gameWord = new Word(possibleWords);
 gameWord.draw();
 
 function resetGame () {
@@ -210,7 +217,10 @@ function resetGame () {
 	}
 	numRight = 0;
 	numWrong = 0;
-	gameWord.word = selectWord(words);
+	if (possibleWords.length == 0) {
+		possibleWords = words.slice(0);
+	}
+	gameWord.word = selectWord(possibleWords);
 	gameWord.draw();
 	
 };
