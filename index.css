@@ -1,0 +1,17 @@
+body {
+	background: linear-gradient(#b3cef9, #030005);
+
+	color: #330055;
+	text-align: center;
+	font-family: 'Allan';font-size: 22px;
+}
+
+ol {
+	color: #b244fc;
+	font-family: 'Actor';font-size: 18px
+}
+#myCanvas {
+	background: linear-gradient(#b3cef9, #030005);
+	margin: 0 auto 0 auto;
+}
+
