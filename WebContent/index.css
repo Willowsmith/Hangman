@@ -9,6 +9,7 @@ body {
 ol {
 	color: #b244fc;
 	font-family: 'Actor';font-size: 18px
+	
 }
 #myCanvas {
 	background: linear-gradient(#b3cef9, #030005);
